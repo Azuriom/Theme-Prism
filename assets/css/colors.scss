@@ -1,0 +1,81 @@
+$red: #c0392b;
+$blue: #007bff;
+$green: #00db12;
+$purple: #9500ff;
+$orange: #ffa600;
+$yellow: #fff700;
+$aqua: #00fbff;
+$pink: #ff00cc;
+
+$color: $orange;
+
+$color-light: lighten($color, 10%);
+$color-darker: darken($color, 10%);
+
+a,
+.btn-link,
+.page-title {
+    color: $color;
+}
+
+.text-primary {
+    color: $color !important;
+}
+
+.text-primary-hover:hover {
+    color: $color-darker !important;
+}
+
+h1,
+footer .social a:hover,
+footer .links a:hover,
+a:hover,
+.forum-big-icon,
+.btn-link:hover {
+    color: $color-darker;
+}
+
+.btn-primary,
+.bg-primary,
+.progress-bar,
+.list-group-item.active,
+.dropdown-item.active,
+.dropdown-item:active,
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: $color !important;
+}
+
+.bg-primary-darker {
+    background-color: $color-darker !important;
+}
+
+.btn-primary,
+.list-group-item.active,
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: $color;
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before,
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+    background-color: $color-light !important;
+    border-color: $color-light !important;
+}
+
+.form-control:focus,
+.custom-select:focus {
+    border-color: $color !important;
+}
+
+.btn-primary:hover,
+.btn-primary.hover,
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background-color: $color !important;
+    border-color: $color !important;
+}
+
+.btn-primary:hover,
+.btn-primary.active {
+    background-color: $color !important;
+    border-color: $color !important;
+}

@@ -1,0 +1,67 @@
+a,
+.btn-link,
+.page-title {
+    color: #c0392b;
+}
+
+.text-primary {
+    color: #c0392b !important;
+}
+
+.text-primary-hover:hover {
+    color: #962d22 !important;
+}
+
+h1,
+footer .social a:hover,
+footer .links a:hover,
+a:hover,
+.forum-big-icon,
+.btn-link:hover {
+    color: #962d22;
+}
+
+.btn-primary,
+.bg-primary,
+.progress-bar,
+.list-group-item.active,
+.dropdown-item.active,
+.dropdown-item:active,
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #c0392b !important;
+}
+
+.bg-primary-darker {
+    background-color: #962d22 !important;
+}
+
+.btn-primary,
+.list-group-item.active,
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: #c0392b;
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before,
+.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+    background-color: #d65548 !important;
+    border-color: #d65548 !important;
+}
+
+.form-control:focus,
+.custom-select:focus {
+    border-color: #c0392b !important;
+}
+
+.btn-primary:hover,
+.btn-primary.hover,
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background-color: #c0392b !important;
+    border-color: #c0392b !important;
+}
+
+.btn-primary:hover,
+.btn-primary.active {
+    background-color: #c0392b !important;
+    border-color: #c0392b !important;
+}
