@@ -16,6 +16,7 @@ return [
     ],
     'config' => [
         'footer_description' => 'Footer description',
+        'footer_links' => 'Footer links',
         'twitter' => 'Twitter',
         'youtube' => 'YouTube',
         'discord' => 'Discord',

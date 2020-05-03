@@ -16,6 +16,7 @@ return [
     ],
     'config' => [
         'footer_description' => 'Description du footer',
+        'footer_links' => 'Liens du footer',
     ],
     'colors' => [
         'red' => 'Rouge',

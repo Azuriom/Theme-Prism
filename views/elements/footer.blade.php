@@ -9,12 +9,12 @@
             <h4>{{ trans('theme::prism.footer.links') }}</h4>
 
             <ul class="list-unstyled">
-                {{--@foreach(theme_config('footer_links') ?? [] as $linkName => $linkValue)
+                @foreach(theme_config('footer_links') ?? [] as $link)
                     <li>
-                        <a href="{{ $linkValue }}"><i class="fas fa-chevron-right"></i> {{ $linkValue }}</a>
+                        <a href="{{ $link['value'] }}"><i class="fas fa-chevron-right"></i> {{ $link['name'] }}</a>
                     </li>
                 @endforeach
-                --}}
+
                 <p>{!! theme_config('footer_support') !!}</p>
             </ul>
         </div>
