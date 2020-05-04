@@ -53,7 +53,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="colorSelect">{{ trans('messages.fields.color') }}</label>
+                    <label for="colorSelect">{{ trans('theme::prism.colors.title') }}</label>
                     <select class="custom-select @error('color') is-invalid @enderror" id="colorSelect" name="color">
                         @foreach(['red', 'blue', 'green', 'purple', 'orange', 'yellow', 'aqua', 'pink'] as $color)
                             <option value="{{ $color }}" @if(theme_config('color') === $color) selected @endif>{{ trans('theme::prism.colors.'.$color) }}</option>

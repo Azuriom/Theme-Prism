@@ -19,6 +19,7 @@ return [
         'footer_links' => 'Liens du footer',
     ],
     'colors' => [
+        'title' => 'Couleur du thème',
         'red' => 'Rouge',
         'blue' => 'Bleu',
         'green' => 'Vert',

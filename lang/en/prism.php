@@ -24,6 +24,7 @@ return [
         'instagram' => 'Instagram',
     ],
     'colors' => [
+        'title' => 'Theme color',
         'red' => 'Red',
         'blue' => 'Blue',
         'green' => 'Green',
