@@ -11,7 +11,7 @@
             <ul class="list-unstyled">
                 @foreach(theme_config('footer_links') ?? [] as $link)
                     <li>
-                        <a href="{{ $link['value'] }}"><i class="fas fa-chevron-right"></i> {{ $link['name'] }}</a>
+                        <a href="{{ $link['value'] }}" target="_blank" rel="noreferrer noopener"><i class="fas fa-chevron-right"></i> {{ $link['name'] }}</a>
                     </li>
                 @endforeach
 
@@ -25,7 +25,7 @@
                 @foreach(['twitter', 'youtube', 'discord', 'teamspeak', 'instagram'] as $social)
                     @if($socialLink = theme_config("footer_social_{$social}"))
                         <li class="list-inline-item">
-                            <a href="{{ $socialLink }}"><i class="fab fa-{{ $social }} fa-2x"></i></a>
+                            <a href="{{ $socialLink }}" target="_blank" rel="noreferrer noopener"><i class="fab fa-{{ $social }} fa-2x"></i></a>
                         </li>
                     @endif
                 @endforeach
