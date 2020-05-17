@@ -53,7 +53,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="colorSelect">{{ trans('theme::prism.colors.title') }}</label>
+                    <label for="colorSelect">{{ trans('messages.fields.color') }}</label>
                     <select class="custom-select @error('color') is-invalid @enderror" id="colorSelect" name="color">
                         @foreach(['red', 'blue', 'green', 'purple', 'orange', 'yellow', 'aqua', 'pink'] as $color)
                             <option value="{{ $color }}" @if(theme_config('color') === $color) selected @endif>{{ trans('theme::prism.colors.'.$color) }}</option>
@@ -66,8 +66,37 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="titleInput">{{ trans('theme::prism.config.home_title') }}</label>
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="titleInput" name="title" value="{{ old('title', theme_config('title')) }}" required>
+
+                    @error('title')
+                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                    @enderror
+                </div>
+
+                @php $usePlayButton = old('use_play_button', theme_config('use_play_button')) === 'on' @endphp
+
+                <div class="form-group custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="playButtonSwitch" name="use_play_button" data-toggle="collapse" data-target="#playButtonGroup" @if($usePlayButton) checked @endif>
+                    <label class="custom-control-label" for="playButtonSwitch">{{ trans('theme::prism.config.use_play_button') }}</label>
+                </div>
+
+                <div id="playButtonGroup" class="{{ $usePlayButton ? 'show' : 'collapse' }}">
+                    <div class="card card-body mb-2">
+                        <div class="form-group">
+                            <label for="playButtonLink">{{ trans('theme::prism.config.play_button_link') }}</label>
+                            <input type="text" class="form-control @error('play_button_link') is-invalid @enderror" id="playButtonLink" name="play_button_link" value="{{ old('play_button_link', theme_config('play_button_link')) }}">
+
+                            @error('play_button_link')
+                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="footerDescriptionInput">{{ trans('theme::prism.config.footer_description') }}</label>
-                    <input type="text" class="form-control @error('footer_description') is-invalid @enderror" id="footerDescriptionInput" name="footer_description" value="{{ old('footer_description', theme_config('footer_description')) }}">
+                    <textarea class="form-control @error('footer_description') is-invalid @enderror" id="footerDescriptionInput" name="footer_description" rows="3">{{ old('footer_description', theme_config('footer_description')) }}</textarea>
 
                     @error('footer_description')
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>

@@ -1,23 +1,17 @@
 {
     "color": "red",
+    "title": "Bienvenue !!",
+    "play_button_link": "/play",
     "footer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt, justo sit amet sagittis fermentum, est purus vestibulum risus, vel lacinia libero ligula non erat. Aenean viverra nisi leo. Pellentesque porttitor et tortor facilisis porttitor. Vestibulum convallis, urna eget gravida malesuada, orci risus lobortis lectus, at tincidunt lectus massa in diam. Etiam lobortis ante vel lectus commodo, eget dictum metus vehicula. Praesent varius volutpat nisi eu ultrices. Curabitur eget fermentum mi. Sed euismod lobortis malesuada.",
     "footer_links": [
         {
             "name": "Link 1",
             "value": "https://azuriom.com"
-        },
-        {
-            "name": "Link 2",
-            "value": "https://azuriom.com"
-        },
-        {
-            "name": "Link 3",
-            "value": "https://azuriom.com"
         }
     ],
     "footer_social_twitter": "https://twitter.com/Azuriom",
     "footer_social_discord": "https://azuriom.com/discord",
-    "footer_social_youtube": null,
+    "footer_social_youtube": "youtube.com",
     "footer_social_teamspeak": "ts.azuriom.com",
-    "footer_social_instagram": null
+    "footer_social_instagram": "insta"
 }

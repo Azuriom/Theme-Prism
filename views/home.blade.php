@@ -8,7 +8,7 @@
             <div class="row align-items-center justify-content-center h-100">
 
                 <div class="col-md-6 text-center">
-                    <h1 class="welcome-title">{{ trans('theme::prism.home.welcome', ['name' => site_name()]) }}</h1>
+                    <h1 class="welcome-title">{{ theme_config('title') }}</h1>
                 </div>
 
             </div>

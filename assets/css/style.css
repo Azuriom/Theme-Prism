@@ -122,6 +122,24 @@ hr {
     display: none;
 }
 
+.sub-navbar #notificationsDropdown {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-navbar #notificationsDropdown::after {
+    content: none;
+}
+
+.copy-address {
+    border-radius: 5px;
+    border: none;
+    padding: 2px 5px;
+    margin-bottom: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
 @media (min-width: 991px) {
     .navbar {
         padding: 1rem 1rem;
@@ -236,6 +254,38 @@ hr {
 
 .post-preview a {
     color: #fff;
+}
+
+/* EasyMDE */
+.editor-toolbar {
+    background: #333!important;
+}
+
+.editor-toolbar .fa {
+    color: #aaa;
+}
+
+.editor-toolbar.fullscreen::before,
+.editor-toolbar.fullscreen::after {
+    display: none;
+}
+
+.editor-toolbar .separator {
+    border-right: 1px solid #ccc;
+}
+
+.editor-toolbar button.active,
+.editor-toolbar button:hover {
+    background: #444!important;
+}
+
+.cm-s-easymde, .editor-preview {
+    color: #fff!important;
+    background: #444!important;
+}
+
+.cm-s-easymde .CodeMirror-cursor {
+    border-left: 1px solid #fff!important;
 }
 
 /*

@@ -16,7 +16,7 @@
                     @foreach($navbar as $element)
                         @if($loop->index < ($loop->count / 2))
                             @if(!$element->isDropdown())
-                                <li class="nav-item">
+                                <li class="nav-item @if($element->isCurrent()) active @endif">
                                     <a class="nav-link" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $element->name }}</a>
                                 </li>
                             @else
@@ -26,7 +26,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @foreach($element->elements as $childElement)
-                                            <a class="dropdown-item" href="{{ $childElement->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
+                                            <a class="dropdown-item @if($childElement->isCurrent()) text-primary @endif" href="{{ $childElement->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
                                         @endforeach
                                     </div>
                                 </li>
@@ -40,7 +40,7 @@
                     @foreach($navbar as $element)
                         @if($loop->index >= ($loop->count / 2))
                             @if(!$element->isDropdown())
-                                <li class="nav-item">
+                                <li class="nav-item @if($element->isCurrent()) active @endif">
                                     <a class="nav-link" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $element->name }}</a>
                                 </li>
                             @else
@@ -50,7 +50,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @foreach($element->elements as $childElement)
-                                            <a class="dropdown-item" href="{{ $childElement->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
+                                            <a class="dropdown-item @if($childElement->isCurrent()) active @endif" href="{{ $childElement->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
                                         @endforeach
                                     </div>
                                 </li>
@@ -66,24 +66,41 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 d-flex align-items-center justify-content-center">
-                    <div class="media mr-md-5">
+                    <div class="media mr-lg-5 align-items-center">
                         <i class="fas fa-chart-bar fa-3x mr-2"></i>
                         <div class="media-body">
                             @if($server)
-                                <h5 class="mb-0">{{ $server->address }}</h5>
+                                @if(theme_config('use_play_button') !== 'on')
+                                    <div data-toggle="tooltip" title="{{ trans('messages.actions.copy') }}" data-copy-target="address" data-copied-messages="{{ implode('|', trans('theme::prism.clipboard')) }}">
+                                        <input type="text" class="copy-address bg-primary-darker h5" id="address" style="width: {{ strlen($server->address) / 2 }}em" value="{{ $server->address }}" readonly>
+                                    </div>
+                                @else
+                                    <div>
+                                        <h5 class="mb-0">{{ $server->name }}</h5>
+                                    </div>
+                                @endif
                                 {{ trans_choice('theme::prism.header.online', $server->getOnlinePlayers()) }}
                             @else
                                 <h5 class="mb-0">{{ trans('theme::prism.header.offline') }}</h5>
                             @endif
                         </div>
+
+                        @if(theme_config('use_play_button') === 'on')
+                            <a href="{{ theme_config('play_button_link') }}" class="btn btn-outline-light btn-rounded ml-3">
+                                {{ trans('theme::prism.play') }}
+                            </a>
+                        @endif
                     </div>
                 </div>
 
                 <div class="col-md-6 text-center">
                     @auth
-                        <a id="userDropdown" class="btn btn-outline-light btn-rounded dropdown-toggle my-1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+                        @include('elements.notifications')
+
+                        <span class="dropdown">
+                            <a id="userDropdown" class="btn btn-outline-light btn-rounded dropdown-toggle my-1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="{{ route('profile.index') }}">
@@ -104,8 +121,9 @@
                                 @csrf
                             </form>
                         </div>
+                        </span>
                     @else
-                        <div class="my-1 ml-md-5 btn-group">
+                        <div class="my-1 ml-lg-5 btn-group">
                             @if(Route::has('register'))
                                 <a class="btn btn-outline-light btn-rounded" href="{{ route('register') }}">{{ trans('auth.register') }}</a>
                             @endif

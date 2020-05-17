@@ -5,8 +5,11 @@ return [
         'online' => ':count online player|:count online players',
         'offline' => 'The server is currently offline',
     ],
+    'clipboard' => [
+        'copied' => 'Copied!',
+        'error' => 'CTRL + C to copy',
+    ],
     'home' => [
-        'welcome' => 'Welcome on :name',
         'discord' => '<span class="count">:count</span> members online',
     ],
     'footer' => [
@@ -15,6 +18,9 @@ return [
         'social' => 'Social',
     ],
     'config' => [
+        'home_title' => 'Home title',
+        'use_play_button' => 'Add a "play" button and hide the server IP',
+        'play_button_link' => '"Play" button link',
         'footer_description' => 'Footer description',
         'footer_links' => 'Footer links',
         'twitter' => 'Twitter',
@@ -24,7 +30,6 @@ return [
         'instagram' => 'Instagram',
     ],
     'colors' => [
-        'title' => 'Theme color',
         'red' => 'Red',
         'blue' => 'Blue',
         'green' => 'Green',
@@ -34,4 +39,5 @@ return [
         'aqua' => 'Aqua',
         'pink' => 'Pink',
     ],
+    'play' => 'Play',
 ];

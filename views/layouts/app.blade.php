@@ -29,6 +29,7 @@
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('vendor/axios/axios.min.js') }}" defer></script>
     <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="{{ theme_asset('js/clipboard.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt/dist/vanilla-tilt.min.js" defer></script>
 
     <!-- Page level scripts -->
