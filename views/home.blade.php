@@ -4,15 +4,17 @@
 
 @section('content')
     <div class="home-background mb-4" style="background: url('{{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}') no-repeat center / cover">
-        <div class="container h-100">
-            <div class="row align-items-center justify-content-center h-100">
+        @if(theme_config('title'))
+            <div class="container h-100">
+                <div class="row align-items-center justify-content-center h-100">
 
-                <div class="col-md-6 text-center">
-                    <h1 class="welcome-title">{{ theme_config('title') }}</h1>
+                    <div class="col-md-6 text-center">
+                        <h1 class="welcome-title">{{ theme_config('title') }}</h1>
+                    </div>
+
                 </div>
-
             </div>
-        </div>
+        @endif
     </div>
 
     <div class="container">

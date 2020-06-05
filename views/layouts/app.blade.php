@@ -1,3 +1,15 @@
+@php
+    $colors = [
+        'red' => '#c0392b',
+        'blue' => '#007bff',
+        'green' => '#00db12',
+        'purple' => '#9500ff',
+        'orange' => '#ffa600',
+        'yellow' => '#fff700',
+        'aqua' => '#00fbff',
+        'pink' => '#ff00cc',
+    ];
+@endphp
 <!DOCTYPE html>
 @include('elements.base')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -5,7 +17,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('description', setting('description', ''))">
-    <meta name="theme-color" content="#3490DC">
+    <meta name="theme-color" content="{{ $colors[theme_config('color')] ?? '#3490dc' }}">
     <meta name="author" content="Azuriom">
 
     <meta property="og:title" content="@yield('title')">

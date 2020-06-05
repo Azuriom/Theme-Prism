@@ -67,7 +67,7 @@
 
                 <div class="form-group">
                     <label for="titleInput">{{ trans('theme::prism.config.home_title') }}</label>
-                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="titleInput" name="title" value="{{ old('title', theme_config('title')) }}" required>
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" id="titleInput" name="title" value="{{ old('title', theme_config('title')) }}">
 
                     @error('title')
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
