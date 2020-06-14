@@ -26,6 +26,7 @@ return [
         'twitter' => 'Twitter',
         'youtube' => 'YouTube',
         'discord' => 'Discord',
+        'steam' => 'Steam',
         'teamspeak' => 'TeamSpeak',
         'instagram' => 'Instagram',
     ],
