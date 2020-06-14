@@ -196,7 +196,7 @@ hr {
     /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);*/
 }
 
-.home-background:before {
+.background-overlay:before {
     content: '';
     position: absolute;
     top: 0;
