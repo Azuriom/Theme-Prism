@@ -23,6 +23,8 @@ return [
         'play_button_link' => '"Play" button link',
         'footer_description' => 'Footer description',
         'footer_links' => 'Footer links',
+    ],
+    'links' => [
         'twitter' => 'Twitter',
         'youtube' => 'YouTube',
         'discord' => 'Discord',

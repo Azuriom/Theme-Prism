@@ -105,7 +105,7 @@
 
                 @foreach(['twitter', 'youtube', 'discord', 'steam', 'teamspeak', 'instagram'] as $social)
                     <div class="form-group">
-                        <label for="{{ $social }}Input">{{ trans('theme::prism.config.'.$social) }}</label>
+                        <label for="{{ $social }}Input">{{ trans('theme::prism.links.'.$social) }}</label>
                         <input type="text" class="form-control @error('footer_social_'.$social) is-invalid @enderror" id="{{ $social }}Input" name="footer_social_{{ $social }}" value="{{ old('footer_social_'.$social, theme_config('footer_social_'.$social)) }}">
 
                         @error('footer_social_'.$social)
