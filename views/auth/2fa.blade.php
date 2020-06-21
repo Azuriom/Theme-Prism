@@ -11,8 +11,8 @@
                 <form method="POST" action="{{ route('login.2fa') }}">
                     @csrf
 
-                    <div class="form-group row">
-                        <label for="code" class="col-md-4 col-form-label text-md-right">{{ trans('auth.2fa-code') }}</label>
+                    <div class="form-group">
+                        <label for="code">{{ trans('auth.2fa-code') }}</label>
 
                         <div class="input-group">
                             <div class="input-group-prepend">

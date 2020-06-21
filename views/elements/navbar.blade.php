@@ -49,7 +49,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ $element->id }}">
                                     @foreach($element->elements as $childElement)
-                                        <a class="dropdown-item @if($childElement->isCurrent()) active @endif" href="{{ $childElement->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
+                                        <a class="dropdown-item @if($childElement->isCurrent()) active @endif" href="{{ $childElement->getLink() }}" @if($childElement->new_tab) target="_blank" rel="noopener" @endif>{{ $childElement->name }}</a>
                                     @endforeach
                                 </div>
                             </li>
@@ -68,10 +68,10 @@
                 <div class="media mr-lg-5 align-items-center">
                     <i class="fas fa-chart-bar fa-3x mr-2"></i>
                     <div class="media-body">
-                        @if($server)
+                        @if($server && $server->isOnline())
                             @if(theme_config('use_play_button') !== 'on')
                                 <div data-toggle="tooltip" title="{{ trans('messages.actions.copy') }}" data-copy-target="address" data-copied-messages="{{ implode('|', trans('theme::prism.clipboard')) }}">
-                                    <input type="text" class="copy-address bg-primary-darker h5 text-center" id="address" style="width: {{ strlen($server->address) / 2 }}em" value="{{ $server->fullAddress() }}" readonly aria-label="Address">
+                                    <input type="text" class="copy-address bg-primary-darker h5 text-center" id="address" style="width: {{ strlen($server->fullAddress()) / 2 }}em" value="{{ $server->fullAddress() }}" readonly aria-label="Address">
                                 </div>
                             @else
                                 <div>
