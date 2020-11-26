@@ -31,6 +31,8 @@ return [
         'steam' => 'Steam',
         'teamspeak' => 'TeamSpeak',
         'instagram' => 'Instagram',
+        'facebook' => 'Facebook',
+        'twitch' => 'Twitch',
     ],
     'colors' => [
         'red' => 'Red',

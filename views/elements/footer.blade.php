@@ -20,7 +20,7 @@
             <h4>{{ trans('theme::prism.footer.social') }}</h4>
 
             <ul class="list-inline">
-                @foreach(['twitter', 'youtube', 'discord', 'steam', 'teamspeak', 'instagram'] as $social)
+                @foreach(['twitter', 'youtube', 'discord', 'steam', 'teamspeak', 'instagram', 'facebook', 'twitch'] as $social)
                     @if($socialLink = theme_config("footer_social_{$social}"))
                         <li class="list-inline-item">
                             <a href="{{ $socialLink }}" target="_blank" rel="noopener noreferrer" title="{{ trans('theme::prism.links.'.$social) }}"><i class="fab fa-{{ $social }} fa-2x"></i></a>
