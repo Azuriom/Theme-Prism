@@ -91,7 +91,7 @@
                         </div>
                     @endif
 
-                    @include('elements.captcha')
+                    @include('elements.captcha', ['dark' => true])
 
                     <button type="submit" class="btn btn-primary btn-block">
                         {{ trans('auth.register') }}
