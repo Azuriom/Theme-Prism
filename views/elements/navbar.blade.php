@@ -71,7 +71,7 @@
                         @if($server && $server->isOnline())
                             @if(theme_config('use_play_button') !== 'on')
                                 <div data-toggle="tooltip" title="{{ trans('messages.actions.copy') }}" data-copy-target="address" data-copied-messages="{{ implode('|', is_array($t = trans('theme::prism.clipboard')) ? $t : []) }}">
-                                    <input type="text" class="copy-address bg-primary-darker h5 text-center" id="address" style="width: {{ strlen($server->fullAddress()) / 2 }}em" value="{{ $server->fullAddress() }}" readonly aria-label="Address">
+                                    <input type="text" class="copy-address bg-dark h5 text-center" id="address" style="width: {{ strlen($server->fullAddress()) / 2 }}em" value="{{ $server->fullAddress() }}" readonly aria-label="Address">
                                 </div>
                             @else
                                 <div>
