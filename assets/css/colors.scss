@@ -79,3 +79,8 @@ a:hover,
     background-color: $color !important;
     border-color: $color !important;
 }
+
+.accordion-button:not(.collapsed) {
+    color: $color;
+    border: 1px solid $color;
+}

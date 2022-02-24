@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('title', trans('messages.home'))
 
-@section('content')
+@section('app')
     <div class="home-background @if(theme_config('title')) background-overlay @endif mb-4" style="background: url('{{ setting('background') ? image_url(setting('background')) : 'https://via.placeholder.com/2000x500' }}') no-repeat center / cover">
         @if(theme_config('title'))
             <div class="container h-100">
@@ -18,6 +18,16 @@
     </div>
 
     <div class="container">
+        @include('elements.session-alerts')
+
+        @if($message)
+            <div class="card mb-4">
+                <div class="card-body">
+                    {{ $message }}
+                </div>
+            </div>
+        @endif
+
         <div class="row">
             @foreach($posts as $post)
                 <div class="col-md-6 mb-4">

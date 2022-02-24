@@ -1,36 +1,33 @@
-function copyClipboard(button, target) {
-    const oldTitle = button.dataset['originalTitle'];
-    let copied = false;
+function clipboardCallback(element, status) {
+    const message = element.dataset[status ? 'copied' : 'copyError'];
 
-    target.select();
-    target.setSelectionRange(0, target.value.length);
-
-    if (document.queryCommandSupported('copy')) {
-        try {
-            if (document.execCommand('copy')) {
-                target.blur();
-                window.getSelection().removeAllRanges();
-                copied = true;
-            }
-        } catch (ex) {
-            console.error('Unable to copy to clipboard: ' + ex);
-        }
-    }
-
-    const copiedMessages = button.dataset['copiedMessages'];
-
-    if ($.fn.tooltip && copiedMessages) {
-        $(button).attr('data-original-title', copiedMessages.split('|')[copied ? 0 : 1]).tooltip('show');
-        $(button).attr('data-original-title', oldTitle === undefined ? '' : oldTitle);
+    if (element.tooltip && message) {
+        const oldTitle = element.dataset['bsOriginalTitle'];
+        element.setAttribute('data-bs-original-title', message);
+        element.tooltip.show();
+        element.setAttribute('data-bs-original-title', oldTitle ? oldTitle : '');
     }
 }
 
-document.querySelectorAll('[data-copy-target]').forEach(function (el) {
+function copyClipboard(button) {
+    navigator.clipboard.writeText(button.innerText).then(function() {
+        clipboardCallback(button, true);
+    }, function(err) {
+        console.error('Could not copy text to clipboard: ', err);
+        clipboardCallback(button, false);
+    });
+}
+
+document.querySelectorAll('[data-copied]').forEach(function (el) {
+    if (!navigator.clipboard) {
+        return;
+    }
+
+    el.tooltip = new bootstrap.Tooltip(el);
+
     el.addEventListener('click', function (ev) {
         ev.preventDefault();
 
-        const target = el.dataset['copyTarget'];
-
-        copyClipboard(el, target === 'self' ? el : document.getElementById(target));
+        copyClipboard(el);
     });
 });

@@ -65,3 +65,8 @@ a:hover,
     background-color: #ff00cc !important;
     border-color: #ff00cc !important;
 }
+
+.accordion-button:not(.collapsed) {
+    color: #ff00cc;
+    border: 1px solid #ff00cc;
+}

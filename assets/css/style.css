@@ -6,16 +6,11 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
     color: #fff;
     background: #333;
 }
 
-.modal-content {
-    color: #212529;
-}
-
-.content .card img {
+img {
     max-width: 100%;
     height: auto;
 }
@@ -25,7 +20,12 @@ body {
     padding-bottom: 15px;
 }
 
-.page-title {
+a {
+    text-decoration: none;
+}
+
+h1,
+.h1 {
     text-align: center;
     text-transform: uppercase;
 }
@@ -41,19 +41,19 @@ body {
     color: inherit;
 }
 
-.custom-select {
-    background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23ccc' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px;
+.form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ccc' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
 }
 
 .form-control,
-.custom-select,
+.form-select,
 .input-group .input-group-text,
 .input-group .btn {
     border-radius: 0;
 }
 
 .form-control,
-.custom-select,
+.form-select,
 .table {
     background-clip: inherit;
     color: #fff;
@@ -66,18 +66,18 @@ body {
 }
 
 .form-control:focus,
-.custom-select:focus {
+.form-select:focus {
     color: #fff;
     background: #444;
 }
 
-.custom-checkbox .custom-control-label::before {
+.form-check .form-check-label::before {
     border: none;
     border-radius: 0;
 }
 
 .form-control:focus,
-.custom-control-input:focus ~ .custom-control-label::before {
+.form-check-input:focus ~ .form-check-label::before {
     box-shadow: none;
 }
 
@@ -95,6 +95,10 @@ hr {
     box-shadow: none !important;
 }
 
+.modal-content {
+    color: #212529;
+}
+
 /*
  * Navbar
  */
@@ -102,7 +106,6 @@ hr {
     font-size: 1.05rem;
     text-transform: uppercase;
     background: #222;
-    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
 }
 
 .navbar .nav-item {
@@ -120,6 +123,11 @@ hr {
 
 .navbar-stop {
     display: none;
+}
+
+.prism-nav-right .dropdown {
+    display: inline-block;
+    list-style: none;
 }
 
 .sub-navbar #notificationsDropdown {
@@ -177,14 +185,17 @@ hr {
 }
 
 .card,
+.accordion-item,
+.accordion-button,
 .list-group-item {
     border-color: #888;
     color: #fff;
     background: #4c4c4c;
 }
 
-.card-header {
-    background-color: rgba(0, 0, 0, .25);
+.card-header,
+.accordion-button {
+    background-color: rgba(0, 0, 0, .25)!important;
 }
 
 /*

@@ -20,12 +20,12 @@
             <h4>{{ trans('theme::prism.footer.social') }}</h4>
 
             <ul class="list-inline">
-                @foreach(['twitter', 'youtube', 'discord', 'steam', 'teamspeak', 'instagram', 'facebook', 'twitch'] as $social)
-                    @if($socialLink = theme_config("footer_social_{$social}"))
-                        <li class="list-inline-item">
-                            <a href="{{ $socialLink }}" target="_blank" rel="noopener noreferrer" title="{{ trans('theme::prism.links.'.$social) }}"><i class="fab fa-{{ $social }} fa-2x"></i></a>
-                        </li>
-                    @endif
+                @foreach(social_links() as $link)
+                    <li class="list-inline-item">
+                        <a href="{{ $link->value }}" target="_blank" rel="noopener noreferrer" title="{{ $link->title }}">
+                            <i class="{{ $link->icon }} fa-2x fa-fw"></i>
+                        </a>
+                    </li>
                 @endforeach
             </ul>
         </div>
@@ -37,7 +37,7 @@
         <div class="col-md-6">
             {{ setting('copyright') }}
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-6 text-md-end">
             @lang('messages.copyright')
         </div>
     </div>
