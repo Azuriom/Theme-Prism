@@ -77,10 +77,10 @@
                     <i class="flex-shrink-0 fas fa-chart-bar fa-3x me-2"></i>
                     <div class="flex-grow-1">
                         @if($server && $server->isOnline())
-                            @if(theme_config('use_play_button') !== 'on')
+                            @if(!$server->joinUrl())
                                 <div class="mb-0">
                                     <span title="{{ trans('messages.actions.copy') }}" class="copy-address bg-dark h6"
-                                          data-copied="{{ trans('theme::prism.clipboard.copied') }}" data-copy-error="{{ trans('theme::prism.clipboard.error') }}">
+                                          data-copied="{{ trans('messages.clipboard.copied') }}" data-copy-error="{{ trans('messages.clipboard.error') }}">
                                         {{ $server->fullAddress() }}
                                     </span>
                                 </div>
@@ -93,9 +93,9 @@
                         @endif
                     </div>
 
-                    @if(theme_config('use_play_button') === 'on')
-                        <a href="{{ theme_config('play_button_link') }}" class="btn btn-outline-light btn-rounded ms-3">
-                            {{ trans('theme::prism.play') }}
+                    @if($server->joinUrl())
+                        <a href="{{ $server->joinUrl() }}" class="btn btn-outline-light btn-rounded ms-3">
+                            {{ trans('messages.server.join') }}
                         </a>
                     @endif
                 </div>

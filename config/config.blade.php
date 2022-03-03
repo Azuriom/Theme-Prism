@@ -6,7 +6,7 @@
     <script>
         function addLinkListener(el) {
             el.addEventListener('click', function () {
-                const element = el.parentNode.parentNode.parentNode;
+                const element = el.parentNode.parentNode.parentNode.parentNode;
 
                 element.parentNode.removeChild(element);
             });
@@ -74,26 +74,6 @@
                     @error('title')
                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                     @enderror
-                </div>
-
-                @php $usePlayButton = old('use_play_button', theme_config('use_play_button')) === 'on' @endphp
-
-                <div class="mb-3 form-check form-switch">
-                    <input type="checkbox" class="form-check-input" id="playButtonSwitch" name="use_play_button" data-bs-toggle="collapse" data-bs-target="#playButtonGroup" @if($usePlayButton) checked @endif>
-                    <label class="form-check-label" for="playButtonSwitch">{{ trans('theme::prism.config.use_play_button') }}</label>
-                </div>
-
-                <div id="playButtonGroup" class="{{ $usePlayButton ? 'show' : 'collapse' }}">
-                    <div class="card card-body mb-2">
-                        <div class="mb-3">
-                            <label class="form-label" for="playButtonLink">{{ trans('theme::prism.config.play_button_link') }}</label>
-                            <input type="text" class="form-control @error('play_button_link') is-invalid @enderror" id="playButtonLink" name="play_button_link" value="{{ old('play_button_link', theme_config('play_button_link')) }}">
-
-                            @error('play_button_link')
-                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                            @enderror
-                        </div>
-                    </div>
                 </div>
 
                 <div class="mb-3">
