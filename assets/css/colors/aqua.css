@@ -16,7 +16,7 @@ h1,
 footer .social a:hover,
 footer .links a:hover,
 a:hover,
-.forum-big-icon,
+.text-primary,
 .btn-link:hover {
     color: #00c9cc;
 }
@@ -64,4 +64,9 @@ a:hover,
 .btn-primary.active {
     background-color: #00fbff !important;
     border-color: #00fbff !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #00fbff;
+    border: 1px solid #00fbff;
 }

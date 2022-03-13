@@ -1,20 +1,19 @@
 {
     "color": "red",
     "title": "Hello World",
-    "play_button_link": "/play",
-    "footer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt, justo sit amet sagittis fermentum, est purus vestibulum risus, vel lacinia libero ligula non erat. Aenean viverra nisi leo. Pellentesque porttitor et tortor facilisis porttitor. Vestibulum convallis, urna eget gravida malesuada, orci risus lobortis lectus, at tincidunt lectus massa in diam. Etiam lobortis ante vel lectus commodo, eget dictum metus vehicula. Praesent varius volutpat nisi eu ultrices. Curabitur eget fermentum mi. Sed euismod lobortis malesuada.",
+    "footer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget turpis pulvinar, efficitur dui sit amet, vestibulum quam. Ut non felis vel augue semper mattis vitae vel nunc. Phasellus malesuada laoreet lacus id interdum. Sed eu tincidunt turpis, id malesuada dui. In lacus metus, egestas ut urna ac, egestas tincidunt dui. In nec nisi rhoncus, volutpat elit id, pharetra nisi. Nunc tincidunt nulla vel ante faucibus, eget bibendum neque malesuada.\r\n\r\nVestibulum porta risus eget diam dapibus, nec aliquet ligula dignissim. Proin sed tellus vestibulum, fermentum turpis eu, aliquam lectus. Praesent pretium porta lacinia. Vivamus id lorem erat. Suspendisse nisi tellus, suscipit et mollis eget, consequat sed nunc. Nunc ut eros non mauris bibendum efficitur eu a lectus. Mauris scelerisque urna vitae mi pellentesque, ut pellentesque turpis egestas.",
     "footer_links": [
         {
-            "name": "Link 1",
+            "name": "Azuriom",
+            "value": "https://azuriom.com"
+        },
+        {
+            "name": "Google",
+            "value": "https://google.com"
+        },
+        {
+            "name": "yey",
             "value": "https://azuriom.com"
         }
-    ],
-    "footer_social_twitter": "https://twitter.com/Azuriom",
-    "footer_social_discord": "https://azuriom.com/discord",
-    "footer_social_steam": "https://steamcommunity.com",
-    "footer_social_youtube": "https://youtube.com",
-    "footer_social_teamspeak": "ts3server://ts.azuriom.com",
-    "footer_social_instagram": "https://www.instagram.com",
-    "footer_social_facebook": "https://www.facebook.com",
-    "footer_social_twitch": "https://www.twitch.tv",
+    ]
 }

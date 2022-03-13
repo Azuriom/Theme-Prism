@@ -30,7 +30,7 @@ h1,
 footer .social a:hover,
 footer .links a:hover,
 a:hover,
-.forum-big-icon,
+.text-primary,
 .btn-link:hover {
     color: $color-darker;
 }
@@ -78,4 +78,9 @@ a:hover,
 .btn-primary.active {
     background-color: $color !important;
     border-color: $color !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: $color;
+    border: 1px solid $color;
 }
