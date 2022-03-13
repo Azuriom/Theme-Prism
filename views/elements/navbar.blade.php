@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-md-6 d-flex align-items-center justify-content-center">
                 <div class="d-flex me-lg-5 align-items-center">
-                    <i class="flex-shrink-0 fas fa-chart-bar fa-3x me-2"></i>
+                    <i class="flex-shrink-0 bi bi-graph-up fs-1 me-2"></i>
                     <div class="flex-grow-1">
                         @if($server && $server->isOnline())
                             @if(!$server->joinUrl())

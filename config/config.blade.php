@@ -22,7 +22,7 @@
             input += '<div class="mb-3 col-md-6"><div class="input-group">';
             input += '<input type="url" class="form-control" name="footer_links[{index}][value]" placeholder="{{ trans('messages.fields.link') }}">';
             input += '<button class="btn btn-outline-danger link-remove" type="button">';
-            input += '<i class="fas fa-times"></i></button></div></div></div>';
+            input += '<i class="bi bi-x-lg"></i></button></div></div></div>';
 
             const newElement = document.createElement('div');
             newElement.innerHTML = input;
@@ -98,7 +98,7 @@
                                 <div class="input-group">
                                     <input type="url" class="form-control" name="footer_links[{index}][value]" placeholder="{{ trans('messages.fields.link') }}" value="{{ $link['value'] }}">
                                     <button class="btn btn-outline-danger link-remove" type="button">
-                                        <i class="fas fa-times"></i>
+                                        <i class="bi bi-x-lg"></i>
                                     </button>
                                 </div>
                             </div>
@@ -108,12 +108,12 @@
 
                 <div class="mb-3">
                     <button type="button" id="addLinkButton" class="btn btn-sm btn-success">
-                        <i class="fas fa-plus"></i> {{ trans('messages.actions.add') }}
+                        <i class="bi bi-plus-lg"></i> {{ trans('messages.actions.add') }}
                     </button>
                 </div>
 
                 <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-save"></i> {{ trans('messages.actions.save') }}
+                    <i class="bi bi-save"></i> {{ trans('messages.actions.save') }}
                 </button>
             </form>
         </div>

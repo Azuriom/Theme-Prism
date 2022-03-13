@@ -11,7 +11,7 @@
             <ul class="list-unstyled">
                 @foreach(theme_config('footer_links') ?? [] as $link)
                     <li>
-                        <a href="{{ $link['value'] }}"><i class="fas fa-chevron-right"></i> {{ $link['name'] }}</a>
+                        <a href="{{ $link['value'] }}"><i class="bi bi-chevron-right"></i> {{ $link['name'] }}</a>
                     </li>
                 @endforeach
             </ul>
@@ -23,7 +23,7 @@
                 @foreach(social_links() as $link)
                     <li class="list-inline-item">
                         <a href="{{ $link->value }}" target="_blank" rel="noopener noreferrer" title="{{ $link->title }}">
-                            <i class="{{ $link->icon }} fa-2x fa-fw"></i>
+                            <i class="{{ $link->icon }} fs-2 mx-1"></i>
                         </a>
                     </li>
                 @endforeach
