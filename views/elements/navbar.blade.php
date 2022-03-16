@@ -93,7 +93,7 @@
                         @endif
                     </div>
 
-                    @if($server->joinUrl())
+                    @if($server && $server->joinUrl())
                         <a href="{{ $server->joinUrl() }}" class="btn btn-outline-light btn-rounded ms-3">
                             {{ trans('messages.server.join') }}
                         </a>
