@@ -225,7 +225,9 @@ hr {
 
 .home-background .welcome-title {
     font-family: 'Changa One', sans-serif;
+    font-size: 2rem;
     color: #fff;
+    position: relative;
 }
 
 @media (min-width: 991px) {
@@ -234,6 +236,12 @@ hr {
     }
 }
 
+.home-container h2,
+.home-container .h2 {
+    font-size: 2rem;
+}
+
+.home-container .card,
 .post-preview {
     position: relative;
     height: 100%;
@@ -254,7 +262,11 @@ hr {
     background: rgba(25, 25, 25, 0.9);
 }
 
+.home-container .card,
 .post-preview .preview-content {
+    border-radius: 0;
+    border: none;
+    color: #fff;
     height: 100%;
     background: #232323;
 }

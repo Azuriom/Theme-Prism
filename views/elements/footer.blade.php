@@ -21,11 +21,9 @@
 
             <ul class="list-inline">
                 @foreach(social_links() as $link)
-                    <li class="list-inline-item">
-                        <a href="{{ $link->value }}" target="_blank" rel="noopener noreferrer" title="{{ $link->title }}">
-                            <i class="{{ $link->icon }} fs-2 mx-1"></i>
-                        </a>
-                    </li>
+                    <a href="{{ $link->value }}" target="_blank" rel="noopener noreferrer" class="list-inline-item" data-bs-toggle="tooltip" title="{{ $link->title }}">
+                        <i class="{{ $link->icon }} fs-2 mx-1"></i>
+                    </a>
                 @endforeach
             </ul>
         </div>

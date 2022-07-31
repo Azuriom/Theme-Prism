@@ -5,9 +5,6 @@ return [
         'online' => ':count joueur en ligne|:count joueurs en ligne',
         'offline' => 'Le serveur est actuellement éteint',
     ],
-    'home' => [
-        'discord' => '<span class="count">:count</span> membres en ligne',
-    ],
     'footer' => [
         'about' => 'À propos',
         'links' => 'Liens utiles',
