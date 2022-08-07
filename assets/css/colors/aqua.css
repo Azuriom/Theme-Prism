@@ -27,7 +27,7 @@ a:hover,
 .list-group-item.active,
 .dropdown-item.active,
 .dropdown-item:active,
-.custom-control-input:checked ~ .custom-control-label::before {
+.form-check-input:checked {
     background-color: #00fbff !important;
 }
 
@@ -37,14 +37,8 @@ a:hover,
 
 .btn-primary,
 .list-group-item.active,
-.custom-control-input:checked ~ .custom-control-label::before {
+.form-check-input:checked {
     border-color: #00fbff;
-}
-
-.custom-control-input:not(:disabled):active ~ .custom-control-label::before,
-.custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-    background-color: #33fcff !important;
-    border-color: #33fcff !important;
 }
 
 .form-control:focus,

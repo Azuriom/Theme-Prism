@@ -1,6 +1,6 @@
 @extends('admin.layouts.admin')
 
-@section('footer_description', 'Theme config')
+@section('title', 'Prism config')
 
 @push('footer-scripts')
     <script>
