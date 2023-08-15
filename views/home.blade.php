@@ -9,7 +9,9 @@
                 <div class="row align-items-center justify-content-center h-100">
 
                     <div class="col-md-6 text-center">
-                        <h1 class="welcome-title">{{ theme_config('title') }}</h1>
+                        <h1 class="display-2 position-relative text-light">
+                            {{ theme_config('title') }}
+                        </h1>
                     </div>
 
                 </div>
@@ -85,7 +87,7 @@
             @foreach($posts as $post)
                 <div class="col-md-6 mb-4">
                     <div class="post-preview">
-                        <a href="{{ route('posts.show', $post->slug) }}" class="link-unstyled">
+                        <a href="{{ route('posts.show', $post->slug) }}" class="text-white">
                             @if($post->hasImage())
                                 <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="img-fluid rounded">
 

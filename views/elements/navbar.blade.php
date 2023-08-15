@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark">
+<nav class="navbar navbar-expand-md bg-dark-subtle py-md-3" data-bs-theme="dark">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
             <div class="navbar-logo">
@@ -11,17 +11,17 @@
 
         <div class="collapse navbar-collapse" id="navbar">
             <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav me-auto">
+            <ul class="navbar-nav justify-content-between me-auto">
                 @foreach($navbar as $element)
                     @if($loop->index < ($loop->count / 2))
                         @if(!$element->isDropdown())
-                            <li class="nav-item">
+                            <li class="nav-item mx-2">
                                 <a class="nav-link @if($element->isCurrent()) active @endif" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener noreferrer" @endif>
                                     {{ $element->name }}
                                 </a>
                             </li>
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item mx-2 dropdown">
                                 <a class="nav-link dropdown-toggle @if($element->isCurrent()) active @endif" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ $element->name }}
                                 </a>
@@ -39,17 +39,17 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav justify-content-between ml-auto">
                 @foreach($navbar as $element)
                     @if($loop->index >= ($loop->count / 2))
                         @if(!$element->isDropdown())
-                            <li class="nav-item">
+                            <li class="nav-item mx-2">
                                 <a class="nav-link @if($element->isCurrent()) active @endif" href="{{ $element->getLink() }}" @if($element->new_tab) target="_blank" rel="noopener noreferrer" @endif>
                                     {{ $element->name }}
                                 </a>
                             </li>
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item mx-2 dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ $element->id }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ $element->name }}
                                 </a>
@@ -69,7 +69,7 @@
     </div>
 </nav>
 
-<div class="sub-navbar bg-primary py-2">
+<div class="sub-navbar text-bg-primary py-2">
     <div class="container">
         <div class="row">
             <div class="col-md-6 d-flex align-items-center justify-content-center">
@@ -79,7 +79,7 @@
                         @if($server && $server->isOnline())
                             @if(!$server->joinUrl())
                                 <div class="mb-0">
-                                    <span title="{{ trans('messages.actions.copy') }}" class="copy-address bg-dark h6"
+                                    <span title="{{ trans('messages.actions.copy') }}" class="copy-address text-bg-dark h6"
                                           data-copied="{{ trans('messages.clipboard.copied') }}" data-copy-error="{{ trans('messages.clipboard.error') }}">
                                         {{ $server->fullAddress() }}
                                     </span>
@@ -102,10 +102,12 @@
             </div>
 
             <div class="col-md-6 text-center prism-nav-right">
+                @include('elements.theme-selector')
+
                 @auth
                     @include('elements.notifications')
 
-                    <div class="dropdown">
+                    <div class="nav-item dropdown">
                         <a id="userDropdown" class="btn btn-outline-light btn-rounded dropdown-toggle my-1" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>

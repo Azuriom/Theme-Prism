@@ -1,12 +1,12 @@
 {
     "id": "prism",
     "name": "Prism",
-    "description": "A dark theme with configurable color.",
-    "version": "1.0.3",
+    "description": "A dark theme with configurable color for Azuriom.",
+    "version": "1.1.0",
     "url": "https://market.azuriom.com/resources/15",
     "authors": [
         "Azuriom"
     ],
-    "azuriom_api": "1.0.0",
+    "azuriom_api": "1.1.0",
     "apiId": 15
 }
